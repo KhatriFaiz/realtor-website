@@ -12,8 +12,8 @@ const Footer = () => {
           </div>
           <nav className="flex space-x-4">
             <Link href="/">Home</Link>
+            <Link href="/buying-with-us">Buying with us</Link>
             <Link href="/about">About</Link>
-            <Link href="/services">Services</Link>
             <Link href="/properties">Properties</Link>
             <Link href="/contact">Contact</Link>
           </nav>
