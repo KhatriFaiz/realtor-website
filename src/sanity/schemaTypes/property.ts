@@ -6,6 +6,12 @@ const property: DocumentDefinition = {
   type: "document",
   fields: [
     {
+      name: "location",
+      title: "Location",
+      type: "string",
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: "price",
       title: "Price",
       type: "number",
@@ -14,12 +20,6 @@ const property: DocumentDefinition = {
     {
       name: "propertyType",
       title: "Property Type",
-      type: "string",
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      name: "location",
-      title: "Location",
       type: "string",
       validation: (Rule) => Rule.required(),
     },

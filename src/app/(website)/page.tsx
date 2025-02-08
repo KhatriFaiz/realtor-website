@@ -4,13 +4,7 @@ import { GetPropertiesQueryResult } from "@/sanity/types";
 import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
 import Link from "next/link";
-import heroImage1 from "@/assets/home/hero-1.jpg";
-import heroImage2 from "@/assets/home/hero-2.jpg";
-import heroImage3 from "@/assets/home/hero-3.jpg";
-import heroImage4 from "@/assets/home/hero-4.jpg";
-import heroImage5 from "@/assets/home/hero-5.jpg";
-import heroImage6 from "@/assets/home/hero-6.jpg";
-import heroImage7 from "@/assets/home/hero-7.jpg";
+import InfinteImages from "@/components/home/InfinteImages";
 
 export default async function Home() {
   const properties =
@@ -19,8 +13,8 @@ export default async function Home() {
   return (
     <main>
       <section>
-        <div className="container mx-auto px-4 py-20">
-          <div className="h-full text-center">
+        <div>
+          <div className="h-full text-center container mx-auto px-4 py-20">
             <h1 className="text-8xl font-semibold tracking-tight leading-none mb-8">
               Find Your
               <br />
@@ -31,38 +25,10 @@ export default async function Home() {
               Step of the Way
             </p>
           </div>
-          <div className="grid gap-1 grid-cols-1 md:grid-cols-3 lg:grid-cols-7 mt-16 items-center h-72">
-            {[
-              { image: heroImage2, alt: "House 2" },
-              { image: heroImage1, alt: "House 1" },
-              { image: heroImage4, alt: "House 4" },
-              { image: heroImage7, alt: "House 7" },
-              { image: heroImage3, alt: "House 3" },
-              { image: heroImage5, alt: "House 5" },
-              { image: heroImage6, alt: "House 6" },
-            ].map((item, index) => {
-              const height = index % 2 === 0 ? "h-full" : "h-4/5";
-              return (
-                <div
-                  key={index}
-                  className={["flex justify-center items-center", height].join(
-                    " "
-                  )}
-                >
-                  <div className="bg-gray-200 w-full h-full rounded-lg mt-8">
-                    <Image
-                      src={item.image}
-                      alt={item.alt}
-                      className="rounded-lg w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+          <InfinteImages />
         </div>
       </section>
-      <section className="bg-gray-100">
+      <section>
         <div className="max-w-screen-lg mx-auto px-4 py-10">
           <h2 className="text-center text-3xl font-bold mb-8">Our Services</h2>
           <div className="grid gap-4 md:grid-cols-3">
